@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('chip', function (Blueprint $table) {
-            $table->bigIncrements('chip_id');
-            $table->char('chip_numero', 9);
-            $table->integer('chip_ope_id');
+        Schema::create('categoria_software', function (Blueprint $table) {
+            $table->bigIncrements('catSf_id');
+            $table->string('catSf_nombre', 100);
+            $table->longText('catSf_descripcion');
+            $table->string('catSf_logo', 75);
             $table->timestamps();
-            //$table->foreign('chip_ope_id')->references('ope_id')->on('operador');
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chip');
+        Schema::dropIfExists('categoria_software');
     }
 };

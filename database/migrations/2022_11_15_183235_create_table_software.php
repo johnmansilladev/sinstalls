@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('soft_descripcion', 75)->nullable();
             $table->string('soft_logo')->nullable();
             $table->timestamps();
-            $table->foreign('soft_bra_id')->references('bra_id')->on('brand');
+            //$table->foreign('soft_bra_id')->references('bra_id')->on('brand');
         });
     }
 

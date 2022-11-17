@@ -15,15 +15,23 @@ class OperadorController extends Controller
      */
     public function index()
     {
+        /*$buttonOptions = [
+            ['name' => "Registrar", 'url' => "config-operador", 'icon' => "shield"], 
+            ['name' => "Imprimir",'nameModal' => "printOperadorModal"], 
+        ];*/
+        
         $operadores =  Operador::all();
-        $breadcrumbs = [['name' => "Listado"]];
-        $pageConfigs = ['pageHeader' => true];
+        /*$breadcrumbs = [
+            ['link'=>"/",'name'=>"Home"],['name' => "Listado"]
+        ];*/
+        $pageConfigs = ['pageHeader' => false];
 
-        //dd($operadores);
+        //dd($buttonOptions);
         return view('/config/operador/index',[
             'pageConfigs' => $pageConfigs, 
-            'breadcrumbs' => $breadcrumbs,
-            'operadores' => $operadores
+            //'breadcrumbs' => $breadcrumbs,
+            'operadores' => $operadores,
+            //'buttonOptions' => $buttonOptions
         ]);
     }
 

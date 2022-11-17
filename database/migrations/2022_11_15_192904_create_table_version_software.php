@@ -29,7 +29,7 @@ return new class extends Migration
             $table->longText('verSf_models');
             $table->longText('verSf_news');
             $table->timestamps();
-            $table->foreign('hrec_chip_id')->references('chip_id')->on('operador');
+            //$table->foreign('verSf_soft_id')->references('soft_id')->on('software');
         });
     }
 

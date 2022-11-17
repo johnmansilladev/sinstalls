@@ -21,13 +21,10 @@
         }
       ]
     },
-    {     
-      "name": "Configuracion",
-      "badge": "",
-      "badgeClass": "",
-      "icon": "settings",
-      "slug": "",
-      "submenu": [
+    {
+      "navheader": "Configuraciones",
+      "slug": ""
+    },    
         {
           "url": "config/operador",
           "name": "Usuarios",
@@ -42,20 +39,26 @@
         },
         {
           "url": "config/operador",
-          "name": "Operador",
+          "name": "Celulares",
           "icon": "phone",
           "slug": "config-operador"
         },
         {
           "url": "config/operador",
-          "name": "Marcas",
-          "icon": "phone",
+          "name": "Servicios",
+          "icon": "tool",
+          "slug": "config-operador"
+        },
+        {
+          "url": "config/operador",
+          "name": "Empresas",
+          "icon": "server",
           "slug": "config-operador"
         }
-      ]
-    },
+      
+    ,
     {
-      "navheader": "Apps & Pages",
+      "navheader": "Módulos",
       "slug": ""
     },
     {

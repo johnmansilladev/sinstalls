@@ -19,7 +19,7 @@ return new class extends Migration
             $table->float('hrec_monto', 4,2);
             $table->date('hrec_fecha');
             $table->timestamps();
-            $table->foreign('hrec_chip_id')->references('chip_id')->on('operador');
+            //$table->foreign('hrec_chip_id')->references('chip_id')->on('chip');
         });
     }
 
