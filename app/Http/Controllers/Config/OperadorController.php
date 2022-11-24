@@ -26,7 +26,7 @@ class OperadorController extends Controller
         ];*/
         $pageConfigs = ['pageHeader' => false];
 
-        //dd($buttonOptions);
+        //dd($operadores->count());
         return view('/config/operador/index',[
             'pageConfigs' => $pageConfigs, 
             //'breadcrumbs' => $breadcrumbs,

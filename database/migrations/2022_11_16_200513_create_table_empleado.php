@@ -15,9 +15,8 @@ return new class extends Migration
     {
         Schema::create('empleado', function (Blueprint $table) {
             $table->bigIncrements('empl_id');
-            $table->integer('empl_emp_id');
-            //$table->integer('empl_rol_id');
-            $table->integer('empl_fond_id');
+            $table->unsignedBigInteger('empl_emp_id');
+            $table->unsignedBigInteger('empl_fond_id');
             $table->char('empl_codigo', 10);
             $table->string('empl_nombres', 50);
             $table->string('empl_direccion');
@@ -28,19 +27,14 @@ return new class extends Migration
             $table->date('empl_fechaNacimiento');
             $table->date('empl_fechaIngreso');
             $table->date('empl_fechaBaja');
-            //$table->string('empl_user', 20);
-            //$table->string('empl_password');
-            //$table->string('empl_avatar',50);
-            //$table->string('empl_colorAvatar',9);
             $table->string('empl_contacto',9);
             $table->string('empl_numeroContacto');
             $table->char('empl_estado',1);
             $table->integer('empl_numeroHijos');
             $table->string('empl_observaciones');
             $table->timestamps();
-            //$table->foreign('empl_emp_id')->references('emp_id')->on('empresa');
-            //$table->foreign('empl_rol_id')->references('rol_id')->on('rol');
-            //$table->foreign('empl_fond_id')->references('fond_id')->on('fondo_pensiones');
+            $table->foreign('empl_emp_id')->references('emp_id')->on('empresa');
+            $table->foreign('empl_fond_id')->references('fond_id')->on('fondo_pensiones');
         });
     }
 

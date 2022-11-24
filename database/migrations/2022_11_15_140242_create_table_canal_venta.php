@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('canv_id');
             $table->string('canv_nombre', 50);
             $table->string('canv_descripcion', 100);
-            $table->string('canv_logo', 100);
+            $table->string('canv_logo', 100)->nullable();
             $table->timestamps();
         });
     }   

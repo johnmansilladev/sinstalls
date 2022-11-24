@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('catSf_id');
             $table->string('catSf_nombre', 100);
             $table->longText('catSf_descripcion');
-            $table->string('catSf_logo', 75);
+            $table->string('catSf_logo', 75)->nullable();
             $table->timestamps();
         });
     }

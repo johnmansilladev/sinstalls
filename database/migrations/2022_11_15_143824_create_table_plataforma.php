@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('plat_nombre');
             $table->string('plat_descripcion');
             $table->string('plat_url');
-            $table->string('plat_logo');
+            $table->string('plat_logo')->nullable();
             $table->timestamps();
         });
     }

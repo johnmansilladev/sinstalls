@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('chip', function (Blueprint $table) {
             $table->bigIncrements('chip_id');
             $table->char('chip_numero', 9);
-            $table->integer('chip_ope_id');
+            $table->unsignedBigInteger('chip_ope_id');
             $table->timestamps();
-            //$table->foreign('chip_ope_id')->references('ope_id')->on('operador');
+            $table->foreign('chip_ope_id')->references('ope_id')->on('operador');
         });
     }
 

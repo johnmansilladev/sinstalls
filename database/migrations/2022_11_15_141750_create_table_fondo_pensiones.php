@@ -20,7 +20,7 @@ return new class extends Migration
             $table->float('fond_comisionFlujo', 2, 2);
             $table->float('fond_comisionMixta', 2, 2);
             $table->float('fond_seguro', 2, 2);
-            $table->string('fond_logo');
+            $table->string('fond_logo')->nullable();
             $table->float('fond_porcentaje', 2, 2);
             $table->timestamps();
         });

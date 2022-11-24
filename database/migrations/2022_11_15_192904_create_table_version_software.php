@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('version_software', function (Blueprint $table) {
             $table->bigIncrements('verSf_id');
-            $table->integer('verSf_soft_id');
+            $table->unsignedBigInteger('verSf_soft_id');
             $table->string('verSf_nombre');
             $table->string('verSf_descripcion');
             $table->json('verSf_soCompatibles');
@@ -29,7 +29,7 @@ return new class extends Migration
             $table->longText('verSf_models');
             $table->longText('verSf_news');
             $table->timestamps();
-            //$table->foreign('verSf_soft_id')->references('soft_id')->on('software');
+            $table->foreign('verSf_soft_id')->references('soft_id')->on('software');
         });
     }
 

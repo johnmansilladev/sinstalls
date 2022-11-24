@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('interfaces_software', function (Blueprint $table) {
             $table->bigIncrements('softIn_id');
-            $table->integer('softIn_soft_id');
-            $table->integer('softIn_int_id');
+            $table->unsignedBigInteger('softIn_soft_id');
+            $table->unsignedBigInteger('softIn_int_id');
             $table->timestamps();
-            //$table->foreign('softIn_soft_id')->references('soft_id')->on('software');
-            //$table->foreign('softIn_int_id')->references('int_id')->on('interfaz');
+            $table->foreign('softIn_soft_id')->references('soft_id')->on('software');
+            $table->foreign('softIn_int_id')->references('int_id')->on('interfaz');
         });
     }
 

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('bra_id');
             $table->string('bra_nombre', 75);
             $table->string('bra_dominio', 100);
-            $table->string('bra_logo',100);
+            $table->string('bra_logo',100)->nullable();
             $table->timestamps();
         });
     }

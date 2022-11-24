@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('historial_recarga', function (Blueprint $table) {
             $table->bigIncrements('hrec_id');
-            $table->integer('hrec_chip_id');
+            $table->unsignedBigInteger('hrec_chip_id');
             $table->float('hrec_monto', 4,2);
             $table->date('hrec_fecha');
             $table->timestamps();
-            //$table->foreign('hrec_chip_id')->references('chip_id')->on('chip');
+            $table->foreign('hrec_chip_id')->references('chip_id')->on('chip');
         });
     }
 

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('int_id');
             $table->string('int_nombre');
             $table->string('int_descripcion');
-            $table->string('int_logo');
+            $table->string('int_logo')->nullable();
             $table->timestamps();
         });
     }

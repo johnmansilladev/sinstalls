@@ -14,7 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('bitacora', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('bita_id');
+            $table->integer('bita_usu_id');
+            $table->integer('bita_registro_id');
+            $table->string('bita_accion');
+            $table->string('bita_table');
+            $table->date('bita_fecha');
             $table->timestamps();
         });
     }

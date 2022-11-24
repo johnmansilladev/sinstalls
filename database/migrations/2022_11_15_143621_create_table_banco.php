@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('ban_id');
             $table->string('ban_nombre');
             $table->string('ban_descripcion');
-            $table->string('ban_logo');
+            $table->string('ban_logo')->nullable();
             $table->timestamps();
         });
     }

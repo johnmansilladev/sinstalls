@@ -70,34 +70,88 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="homeIcon-tab" data-bs-toggle="tab" href="#homeIcon"
-                                        aria-controls="home" role="tab" aria-selected="true"><i data-feather="home"></i>
-                                        Números</a>
-                                </li>                                
+                                        aria-controls="home" role="tab" aria-selected="true">
+                                        # Números</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="aboutIcon-tab" data-bs-toggle="tab" href="#aboutIcon"
-                                        aria-controls="about" role="tab" aria-selected="false"><i
-                                            data-feather="smartphone"></i>Operadores</a>
+                                        aria-controls="about" role="tab" aria-selected="false">
+                                        <i data-feather="smartphone"></i>Operadores</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
+
                                 <div class="tab-pane active" id="homeIcon" aria-labelledby="homeIcon-tab" role="tabpanel">
-                                    <p>
-                                        Candy canes donut chupa chups candy canes lemon drops oat cake wafer. Cotton candy
-                                        candy canes marzipan
-                                        carrot cake. Sesame snaps lemon drops candy marzipan donut brownie tootsie roll.
-                                        Icing croissant bonbon
-                                        biscuit gummi bears. Pudding candy canes sugar plum cookie chocolate cake powder
-                                        croissant.
-                                    </p>
-                                    <p>
-                                        Carrot cake tiramisu danish candy cake muffin croissant tart dessert. Tiramisu
-                                        caramels candy canes
-                                        chocolate cake sweet roll liquorice icing cupcake. Candy cookie sweet roll bear claw
-                                        sweet roll.
-                                    </p>
+                                    <div class="d-flex justify-content-start mb-1">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Ingrese número">
+                                        </div>
+                                        <button class="btn btn-primary">Búsqueda </button>
+                                        <button class="btn btn-dark"><i data-feather="printer"></i> </button>                                       
+                                    </div>
+                                    
+                                    <div>
+                                        <table class="table">
+                                            <thead class="borderless">
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Operador</th>
+                                                    <th>Logo</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if ($operadores->count() > 0)
+                                                    @foreach ($operadores as $operador)
+                                                        <tr>
+                                                            <td>{{ $loop->iteration }}</td>
+                                                            <td>
+                                                                <span class="fw-bold">{{ $operador->ope_nombre }}</span>
+                                                            </td>
+                                                            <td>
+                                                                <img src="{{ asset('images/icons/angular.svg') }}"
+                                                                    class="me-75" height="20" width="20"
+                                                                    alt="Angular" />
+                                                            </td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button type="button"
+                                                                        class="btn btn-sm dropdown-toggle hide-arrow py-0"
+                                                                        data-bs-toggle="dropdown">
+                                                                        <i data-feather="more-vertical"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                                        <a class="dropdown-item" data-bs-toggle="modal"
+                                                                            data-bs-target="#editUser">
+                                                                            <i data-feather="edit-2" class="me-50"></i>
+                                                                            <span>Editar</span>
+                                                                        </a>
+                                                                        <a class="dropdown-item" href="#">
+                                                                            <i data-feather="trash" class="me-50"></i>
+                                                                            <span>Eliminar</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @else
+                                                    <tr>
+                                                        <td class="text-center" colspan="4">
+                                                            <div>
+                                                                No hay registros aún
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @endif
+                                            </tbody>
+                                        </table>
+                                    </div>
+
                                 </div>
-                                
+
                                 <div class="tab-pane" id="aboutIcon" aria-labelledby="aboutIcon-tab" role="tabpanel">
+                                    
                                     <table class="table">
                                         <thead class="borderless">
                                             <tr>
@@ -108,37 +162,49 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($operadores as $operador)
-                                                <tr>
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>
-                                                        <span class="fw-bold">{{ $operador->ope_nombre }}</span>
-                                                    </td>
-                                                    <td>
-                                                        <img src="{{ asset('images/icons/angular.svg') }}" class="me-75"
-                                                            height="20" width="20" alt="Angular" />
-                                                    </td>
-                                                    <td>
-                                                        <div class="dropdown">
-                                                            <button type="button"
-                                                                class="btn btn-sm dropdown-toggle hide-arrow py-0"
-                                                                data-bs-toggle="dropdown">
-                                                                <i data-feather="more-vertical"></i>
-                                                            </button>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <a class="dropdown-item" href="#">
-                                                                    <i data-feather="edit-2" class="me-50"></i>
-                                                                    <span>Editar</span>
-                                                                </a>
-                                                                <a class="dropdown-item" href="#">
-                                                                    <i data-feather="trash" class="me-50"></i>
-                                                                    <span>Eliminar</span>
-                                                                </a>
+                                            @if ($operadores->count() > 0)
+                                                @foreach ($operadores as $operador)
+                                                    <tr>
+                                                        <td>{{ $loop->iteration }}</td>
+                                                        <td>
+                                                            <span class="fw-bold">{{ $operador->ope_nombre }}</span>
+                                                        </td>
+                                                        <td>
+                                                            <img src="{{ asset('images/icons/angular.svg') }}"
+                                                                class="me-75" height="20" width="20"
+                                                                alt="Angular" />
+                                                        </td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <button type="button"
+                                                                    class="btn btn-sm dropdown-toggle hide-arrow py-0"
+                                                                    data-bs-toggle="dropdown">
+                                                                    <i data-feather="more-vertical"></i>
+                                                                </button>
+                                                                <div class="dropdown-menu dropdown-menu-end">
+                                                                    <a class="dropdown-item" data-bs-toggle="modal"
+                                                                        data-bs-target="#editUser">
+                                                                        <i data-feather="edit-2" class="me-50"></i>
+                                                                        <span>Editar</span>
+                                                                    </a>
+                                                                    <a class="dropdown-item" href="#">
+                                                                        <i data-feather="trash" class="me-50"></i>
+                                                                        <span>Eliminar</span>
+                                                                    </a>
+                                                                </div>
                                                             </div>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            @else
+                                                <tr>
+                                                    <td class="text-center" colspan="4">
+                                                        <div>
+                                                            No hay registros aún
                                                         </div>
                                                     </td>
                                                 </tr>
-                                            @endforeach
+                                            @endif
                                         </tbody>
                                     </table>
                                 </div>
@@ -150,5 +216,8 @@
             </div>
         </div>
     </div>
+    @include('config.operador._partials.modal')
     <!-- Borderless table end -->
+
 @endsection
+
