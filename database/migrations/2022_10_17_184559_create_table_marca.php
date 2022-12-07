@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('marca_software', function (Blueprint $table) {
             $table->bigIncrements('mars_id');
+            $table->integer('mars_idPadre');
             $table->string('mars_nombre', 50);
             $table->string('mars_descripcion',75)->nullable();
             $table->string('mars_logo',100)->nullable();

@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('software', function (Blueprint $table) {
             $table->bigIncrements('soft_id');
-            $table->unsignedBigInteger('soft_bra_id');
+            $table->unsignedBigInteger('soft_mars_id');
             $table->string('soft_nombre', 30);
             $table->string('soft_descripcion', 75)->nullable();
             $table->string('soft_logo')->nullable();
             $table->timestamps();
-            $table->foreign('soft_bra_id')->references('bra_id')->on('brand');
+            $table->foreign('soft_mars_id')->references('mars_id')->on('marca_software');
         });
     }
 

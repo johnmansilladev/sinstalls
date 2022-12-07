@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('criptomoneda', function (Blueprint $table) {
-            $table->bigIncrements('cript_id');
-            $table->string('cript_nombre', 30);
-            $table->string('cript_descripcion',75)->nullable();
-            $table->string('cript_logo', 100)->nullable();
+        Schema::create('tipo_documento', function (Blueprint $table) {
+            $table->bigIncrements('tipoDoc_id');
+            $table->string('tipoDoc_nombre', 45);
+            $table->char('tipoDoc_estado', 1);
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('criptomoneda');
+        Schema::dropIfExists('tipo_documento');
     }
 };
