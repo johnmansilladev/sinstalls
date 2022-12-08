@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('cuenta_plataforma', function (Blueprint $table) {
             $table->bigIncrements('cuentPlat_id');
             $table->unsignedBigInteger('cuentPlat_plat_id');
-            $table->unsignedBigInteger('cuentPlat_tar_id');
+            $table->unsignedBigInteger('cuentPlat_tar_id')->nullable();
             $table->string('cuentPlat_nombre');
             $table->string('cuentPlat_correo', 100);
             $table->string('cuentPlat_password', 100);
