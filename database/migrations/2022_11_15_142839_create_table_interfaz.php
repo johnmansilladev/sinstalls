@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('interfaz', function (Blueprint $table) {
             $table->bigIncrements('int_id');
             $table->string('int_nombre');
-            $table->string('int_descripcion');
+            $table->string('int_descripcion')->nullable();
             $table->string('int_logo')->nullable();
             $table->timestamps();
         });

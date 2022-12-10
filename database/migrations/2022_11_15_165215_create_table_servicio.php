@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('servicio', function (Blueprint $table) {
             $table->bigIncrements('serv_id');
             $table->string('serv_nombre');
-            $table->string('serv_descripcion');
+            $table->string('serv_descripcion')->nullable();
+            $table->char('serv_requireCheckPc');
             $table->timestamps();
         });
     }

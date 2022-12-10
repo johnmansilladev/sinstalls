@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('categoria_software', function (Blueprint $table) {
             $table->bigIncrements('catSf_id');
             $table->string('catSf_nombre', 100);
-            $table->longText('catSf_descripcion');
+            $table->longText('catSf_descripcion')->nullable();
             $table->string('catSf_logo', 75)->nullable();
             $table->timestamps();
         });
