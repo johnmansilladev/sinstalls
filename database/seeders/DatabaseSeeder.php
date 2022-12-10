@@ -14,10 +14,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        //Módulo Instalaciones
+
         $this->call(MarcaSoftwareSeeder::class);
         $this->call(CategoriaSoftwareSeeder::class);
         $this->call(InterfaceSeeder::class);
         $this->call(ServicioSeeder::class);
+        $this->call(EstadosInstalacionSeeder::class);
+
+        $this->call(SoftwareSeeder::class);
+
+        //Módulo Ventas
+
+        $this->call(ClienteSeeder::class);
+        $this->call(BrandSeeder::class);
+        $this->call(CanalVentaSeeder::class);
+
+
+        //Módulo Cuentas
+        $this->call(ProveedorSeeder::class);
     }
 }

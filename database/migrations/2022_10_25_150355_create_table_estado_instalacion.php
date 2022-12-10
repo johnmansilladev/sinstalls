@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements('estInst_id');
             $table->string('estInst_nombre', 30);
             $table->string('estInst_descripcion',125)->nullable();
+            $table->string('estInst_colorClass',100);
             $table->timestamps();
         });
     }

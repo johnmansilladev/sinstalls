@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('prov_id');
             $table->string('prov_razonSocial',125);
             $table->string('prov_descripcion',100);
-            $table->json('prov_medioContacto')->nullable();
+            $table->text('prov_medioContacto')->nullable();
             $table->char('prov_estado', 1);
             $table->timestamps();
         });

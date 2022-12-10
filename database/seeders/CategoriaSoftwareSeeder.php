@@ -20,42 +20,42 @@ class CategoriaSoftwareSeeder extends Seeder
         DB::table('categoria_software')->insert([
             'catSf_nombre' => 'Agricultural',
             'catSf_descripcion' => null,
-            'catSf_logo' => 'Agricultural.png',
+            'catSf_logo' => 'categorias_software/Agricultural.png',
         ]);
         DB::table('categoria_software')->insert([
             'catSf_nombre' => 'Automotive',
             'catSf_descripcion' => null,
-            'catSf_logo' => 'Automotive.png'
+            'catSf_logo' => 'categorias_software/Automotive.png'
         ]);
         DB::table('categoria_software')->insert([
             'catSf_nombre' => 'Forklit',
             'catSf_descripcion' => null,
-            'catSf_logo' => 'Forklit.png'
+            'catSf_logo' => 'categorias_software/Forklit.png'
         ]);
         DB::table('categoria_software')->insert([
             'catSf_nombre' => 'Generators',
             'catSf_descripcion' => null,
-            'catSf_logo' => 'Generators.png'
+            'catSf_logo' => 'categorias_software/Generators.png'
         ]);
         DB::table('categoria_software')->insert([
             'catSf_nombre' => 'Heavy Equipment',
             'catSf_descripcion' => null,
-            'catSf_logo' => 'HeavyEquipment.png'
+            'catSf_logo' => 'categorias_software/HeavyEquipment.png'
         ]);
         DB::table('categoria_software')->insert([
             'catSf_nombre' => 'Marine',
             'catSf_descripcion' => null,
-            'catSf_logo' => 'Marine.png'
+            'catSf_logo' => 'categorias_software/Marine.png'
         ]);
         DB::table('categoria_software')->insert([
             'catSf_nombre' => 'Transmision',
             'catSf_descripcion' => null,
-            'catSf_logo' => 'Transmision.png'
+            'catSf_logo' => 'categorias_software/Transmision.png'
         ]);
         DB::table('categoria_software')->insert([
             'catSf_nombre' => 'Truck & Heavy Truck',
             'catSf_descripcion' => null,
-            'catSf_logo' => 'TruckHeavyTruck.png'
+            'catSf_logo' => 'categorias_software/TruckHeavyTruck.png'
         ]);
 
     }

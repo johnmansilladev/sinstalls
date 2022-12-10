@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('soft_id');
             $table->unsignedBigInteger('soft_mars_id');
             $table->unsignedBigInteger('soft_catSf_id');
-            $table->string('soft_nombre', 30);
+            $table->string('soft_nombre', 100);
             $table->string('soft_descripcion', 75)->nullable();
             $table->string('soft_logo')->nullable();
             $table->timestamps();
