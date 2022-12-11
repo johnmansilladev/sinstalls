@@ -21,12 +21,13 @@ class SoftwareFactory extends Factory
     {
         return [
             'soft_mars_id'=> MarcaSoftware::inRandomOrder()->value('mars_id'),
-            "soft_catSf_id" => CategoriaSoftware::inRandomOrder()->value('catSf_id'),
-            "soft_nombre" => $this->faker->jobTitle(). ' '. rand(2015, 2022). '.0'. rand(1,9),
-            "soft_descripcion" => $this->faker->text(75),
-            "soft_logo" => Str::random(10). '.png',
-            "created_at" => now(),
-            "updated_at" => now(),
+            'soft_catSf_id' => CategoriaSoftware::inRandomOrder()->value('catSf_id'),
+            //'soft_nombre' => $this->faker->jobTitle(). ' '. rand(2015, 2022). '.0'. rand(1,9),
+            'soft_nombre' => $this->faker->jobTitle(),
+            'soft_descripcion' => $this->faker->text(75),
+            'soft_logo' => Str::random(10). '.png',
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }

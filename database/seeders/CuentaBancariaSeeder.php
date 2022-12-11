@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Cuentas\CuentaBancaria;
 use App\Models\Cuentas\Tarjeta;
 use Database\Factories\Cuentas\TarjetaFactory;
-use Faker\Factory as Faker;
+//use Faker\Factory as Faker;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 
-class CuentaPlataformaSeeder extends Seeder
+class CuentaBancariaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,15 +20,12 @@ class CuentaPlataformaSeeder extends Seeder
      */
     public function run()
     {
-        $this->faker = Faker::create();
+        //$this->faker = Faker::create();
         $cuentasBancarias = 10;
-        
 
         CuentaBancaria::factory()->count($cuentasBancarias)
-        ->has(Tarjeta::factory()->count(1))
-        ->create();
-
-       
+            ->has(Tarjeta::factory()->count(1))
+            ->create();
         
     }
 }

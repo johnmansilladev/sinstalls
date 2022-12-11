@@ -28,4 +28,9 @@ class Software extends Model
     {
         return $this->belongsTo(MarcaSoftware::class, 'soft_mars_id', 'mars_id');
     }
+
+    public function versionSoftwares()
+    {
+        return $this->hasMany(VersionSoftware::class, 'verSf_soft_id', 'soft_id');
+    }
 }

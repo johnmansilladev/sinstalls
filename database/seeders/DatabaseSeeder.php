@@ -38,5 +38,7 @@ class DatabaseSeeder extends Seeder
         $this->call(OperadorSeeder::class);
         $this->call(PlataformaSeeder::class);
         $this->call(ChipWithHistorialSeeder::class);
+
+        $this->call(CuentaBancariaSeeder::class);
     }
 }
