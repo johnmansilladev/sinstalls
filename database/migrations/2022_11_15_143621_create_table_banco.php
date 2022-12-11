@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('banco', function (Blueprint $table) {
             $table->bigIncrements('ban_id');
-            $table->string('ban_nombre');
-            $table->string('ban_descripcion');
+            $table->string('ban_nombre', 75);
+            $table->string('ban_alias', 15);
+            //$table->string('ban_descripcion', 125)->nullable();
             $table->string('ban_logo')->nullable();
             $table->timestamps();
         });

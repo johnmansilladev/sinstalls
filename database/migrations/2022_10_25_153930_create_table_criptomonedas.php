@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('criptomoneda', function (Blueprint $table) {
             $table->bigIncrements('cript_id');
             $table->string('cript_nombre', 30);
-            $table->string('cript_descripcion',75)->nullable();
+            $table->string('cript_siglas', 8);
+            //$table->string('cript_descripcion',75)->nullable();
             $table->string('cript_logo', 100)->nullable();
             $table->timestamps();
         });

@@ -21,11 +21,11 @@ class Software extends Model
 
     public function categoriasoftwares()
     {
-        return $this->hasMany(CategoriaSoftware::class,'catSf_id', 'soft_catSf_id');
+        return $this->belongsTo(CategoriaSoftware::class, 'soft_catSf_id','catSf_id');
     }
 
     public function marcasoftwares()
     {
-        return $this->hasMany(MarcaSoftware::class,'mars_id', 'soft_mars_id');
+        return $this->belongsTo(MarcaSoftware::class, 'soft_mars_id', 'mars_id');
     }
 }

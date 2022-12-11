@@ -18,4 +18,9 @@ class Tarjeta extends Model
         'tar_passwordCajero',
         'tar_passwordWeb',
     ];
+
+    public function cuentaBancaria()
+    {
+        return $this->belongsTo('App\Models\Cuentas\CuentaBancaria','cuentaBan_id', 'tar_cuentBan_id','tarjetas');
+    }
 }

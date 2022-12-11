@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Http\Controllers\Cuentas\ChipController;
+use App\Models\Cuentas\Plataforma;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -21,7 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call(InterfaceSeeder::class);
         $this->call(ServicioSeeder::class);
         $this->call(EstadosInstalacionSeeder::class);
-
         $this->call(SoftwareSeeder::class);
 
         //Módulo Ventas
@@ -30,8 +31,12 @@ class DatabaseSeeder extends Seeder
         $this->call(BrandSeeder::class);
         $this->call(CanalVentaSeeder::class);
 
-
         //Módulo Cuentas
         $this->call(ProveedorSeeder::class);
+        $this->call(BancoSeeder::class);
+        $this->call(CriptomonedaSeeder::class);
+        $this->call(OperadorSeeder::class);
+        $this->call(PlataformaSeeder::class);
+        $this->call(ChipWithHistorialSeeder::class);
     }
 }

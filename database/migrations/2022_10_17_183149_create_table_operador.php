@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('operador', function (Blueprint $table) {
             $table->bigIncrements('ope_id');
             $table->string('ope_nombre', 30);
-            $table->string('ope_descripcion', 75)->nullable();
-            $table->string('ope_logo')->nullable();
+            //$table->string('ope_descripcion', 75)->nullable();
+            $table->string('ope_logo', 50)->nullable();
             $table->timestamps();
         });
     }

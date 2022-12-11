@@ -18,6 +18,6 @@ class CategoriaSoftware extends Model
 
     public function software()
     {
-        return $this->belongsTo(Software::class, 'soft_catSf_id', 'catSf_id');
+        return $this->hasMany(Software::class, 'soft_catSf_id', 'catSf_id');
     }
 }

@@ -16,6 +16,7 @@ use App\Http\Controllers\MiscellaneousController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\Config\OperadorController;
+use App\Http\Controllers\Cuentas\CuentaPlataformaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -244,5 +245,11 @@ Route::get('lang/{locale}', [LanguageController::class, 'swap']);
 Route::group(['prefix' => 'config'], function (){
     //Route::resource('/operador', [OperadorController::class]);
     Route::get('/operador', [OperadorController::class, 'index'])->name('config-operador');
+    
+});
+
+Route::group(['prefix' => 'installs'], function (){
+    //Route::resource('/operador', [OperadorController::class]);
+    Route::get('/cuenta-plataforma', [CuentaPlataformaController::class, 'index'])->name('installs-cuenta-plataforma');
     
 });

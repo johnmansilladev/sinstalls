@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Cuentas;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cuentas\CuentaBancaria;
+use App\Models\Cuentas\Tarjeta;
 use Illuminate\Http\Request;
 
 class CuentaPlataformaController extends Controller
@@ -14,7 +16,16 @@ class CuentaPlataformaController extends Controller
      */
     public function index()
     {
-        //
+        //$operadores =  CuentaPlataforma::all();
+        $operador = CuentaBancaria::find(1);
+
+        $pageConfigs = ['pageHeader' => false];
+
+        dd($operador->tarjetas);
+        return view('/config/operador/index',[
+            'pageConfigs' => $pageConfigs, 
+            'operadores' => $operador,
+        ]);
     }
 
     /**

@@ -19,4 +19,9 @@ class CuentaBancaria extends Model
         'cuentBan_descripcion',
         'cuentBan_tipoCuenta',
     ];
+
+    public function tarjetas()
+    {
+        return $this->hasMany('App\Models\Cuentas\Tarjeta', 'tar_cuentBan_id', 'cuentBan_id');
+    }
 }

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('tarjeta', function (Blueprint $table) {
             $table->bigIncrements('tar_id');
             $table->unsignedBigInteger('tar_cuentBan_id');
+            $table->string('tar_numero', 16);
             $table->string('tar_anioVcto', 4);
             $table->string('tar_mesVcto', 4);
             $table->string('tar_cvv', 3);
