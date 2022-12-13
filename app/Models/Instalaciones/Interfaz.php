@@ -15,4 +15,10 @@ class Interfaz extends Model
         'int_descripcion',
         'int_logo',
     ];
+
+
+    public function interfaceSoftwares()
+    {
+        return $this->belongsTo(InterfacesSoftware::class, 'softIn_int_id', 'int_id');
+    }
 }

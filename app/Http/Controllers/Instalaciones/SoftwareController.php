@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Instalaciones;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Instalaciones\Software;
+
 
 class SoftwareController extends Controller
 {
@@ -14,7 +16,13 @@ class SoftwareController extends Controller
      */
     public function index()
     {
-        //
+        $softwares = Software::all();
+        $pageConfigs = ['pageHeader' => false];
+        //dd($softwares);
+        return view('installs.softwares.index',[
+            'pageConfigs' => $pageConfigs, 
+            'softwares' => $softwares,
+        ]);
     }
 
     /**

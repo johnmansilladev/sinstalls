@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Instalaciones;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Instalaciones\Servicio;
 
 class ServicioController extends Controller
 {
@@ -14,7 +15,14 @@ class ServicioController extends Controller
      */
     public function index()
     {
-        //
+        $servicios  = Servicio::all();
+        
+        $pageConfigs = ['pageHeader' => false];
+
+        return view('installs.servicios.index',[
+            'pageConfigs' => $pageConfigs, 
+            'servicios' => $servicios,
+        ]);
     }
 
     /**
@@ -35,7 +43,7 @@ class ServicioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

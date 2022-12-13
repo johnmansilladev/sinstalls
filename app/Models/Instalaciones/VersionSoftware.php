@@ -25,4 +25,10 @@ class VersionSoftware extends Model
         'verSf_models',
         'verSf_news',
     ];
+
+
+    public function software()
+    {
+        return $this->belongsTo(Sofware::class, 'soft_id', 'verSf_soft_id');
+    }
 }

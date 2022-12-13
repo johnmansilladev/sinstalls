@@ -20,6 +20,6 @@ class MarcaSoftware extends Model
 
     public function software()
     {
-        return $this->belongsTo(Software::class, 'soft_mars_id', 'mars_id');
+        return $this->hasMany(Software::class, 'soft_mars_id', 'mars_id');
     }
 }
