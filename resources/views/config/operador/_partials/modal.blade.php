@@ -32,6 +32,36 @@
                             Cancelar
                         </button>
                     </div>
+                    <div class="col-12">
+                        <label class="form-label" for="">Marca</label>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="ddMarca"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Seleccione marca
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="ddMarca">
+                                @foreach ($marcas_software as $marca )
+                                    <li><a class="dropdown-item" href="#">{{$marca->mars_nombre}}</a></li>
+                                @endforeach
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="">Categoría</label>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="ddMarca"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Seleccione marca
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="ddMarca">
+                                @foreach ($categorias_software as $categoria )
+                                    <li><a class="dropdown-item" href="#">{{$categoria->catSf_nombre}}</a></li>
+                                @endforeach
+                                
+                            </ul>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

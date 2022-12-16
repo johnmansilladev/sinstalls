@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Instalaciones;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Instalaciones\Software;
+use App\Models\Instalaciones\MarcaSoftware;
+use App\Models\Instalaciones\CategoriaSoftware;
 
 
 class SoftwareController extends Controller
@@ -16,13 +18,21 @@ class SoftwareController extends Controller
      */
     public function index()
     {
-        $softwares = Software::all();
+        $elementsPerPage = 10;
+
+        $marcas_software = MarcaSoftware::all();
+        $categorias_software =  CategoriaSoftware::all();
+        $softwares = Software::latest()->paginate($elementsPerPage);
+
         $pageConfigs = ['pageHeader' => false];
         //dd($softwares);
         return view('installs.softwares.index',[
             'pageConfigs' => $pageConfigs, 
             'softwares' => $softwares,
-        ]);
+            'marcas_software' => $marcas_software, 
+            'categorias_software' => $categorias_software,
+        ])
+        ->with('i', (request()->input('page', 1) - 1) * $elementsPerPage);
     }
 
     /**
@@ -43,7 +53,8 @@ class SoftwareController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Software::create($request->all());
+        return redirect()->route('softwares.index');
     }
 
     /**
@@ -65,7 +76,7 @@ class SoftwareController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -77,7 +88,9 @@ class SoftwareController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $software = Software::findOrFail($id);
+        $software->fill($request->all())->save();
+        return redirect()->back();
     }
 
     /**

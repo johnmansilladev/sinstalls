@@ -253,8 +253,8 @@ Route::group(['prefix' => 'config'], function (){
 Route::group(['prefix' => 'installs'], function (){
     Route::get('/cuenta-plataforma', [CuentaPlataformaController::class, 'index'])->name('installs-cuenta-plataforma');
     Route::get('/servicios', [ServicioController::class, 'index'])->name('installs-servicios');
-    Route::get('/softwares', [SoftwareController::class, 'index'])->name('installs-softwares');
-    
+    //Route::get('/softwares', [SoftwareController::class, 'index'])->name('installs-softwares');
+    Route::resource('/softwares', SoftwareController::class);
     
 });
 
