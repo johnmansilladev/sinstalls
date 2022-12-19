@@ -255,6 +255,6 @@ Route::group(['prefix' => 'installs'], function (){
     Route::get('/servicios', [ServicioController::class, 'index'])->name('installs-servicios');
     //Route::get('/softwares', [SoftwareController::class, 'index'])->name('installs-softwares');
     Route::resource('/softwares', SoftwareController::class);
-    
+    Route::get('/response/getVersionsByIdSoftware/{idSoftware}', [SoftwareController::class, 'getVersionsByIdSoftware'])->name('installs-response-json');    
 });
 

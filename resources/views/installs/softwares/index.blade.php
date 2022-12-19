@@ -21,7 +21,7 @@
 
                             <div class="row">
                                 <div class="col-xl-8">
-                                    <table class="table border-dark">
+                                    <table class="table border-dark" id="tableVersionSoftwares">
                                         <thead class="borderless">
                                             <tr>
                                                 <th>#</th>
@@ -37,6 +37,7 @@
                                                     <tr>
                                                         <td>{{-- {{ $loop->iteration }} --}}
                                                             {{ ++$i }}
+                                                            <input type="hidden" value="{{ $software->soft_id }}" id="idSoftware" name="idSoftware">
                                                         </td>
                                                         <td>
                                                             <span class="fw-bold">{{ $software->soft_nombre }}</span>
@@ -90,17 +91,18 @@
                                         </tbody>
                                     </table>
                                     <div class="row pt-2">
-                                        <div class="col-md-12">
+                                        {{-- <div class="col-md-12">
                                             <nav aria-label="Page navigation">
                                                 <ul class="pagination justify-content-center">
                                                     @if ($softwares->count() > 0)
-                                                        {{ $softwares->render('pagination::bootstrap-4') }}
+                                                        {{ $softwares->render('pagination::bootstrap-5') }}
                                                     @else
                                                         <br><br><br><br><br><br>
                                                     @endif
                                                 </ul>
                                             </nav>
-                                        </div>
+                                        </div> --}}
+                                        {{ $softwares->render('pagination::bootstrap-5') }}
                                     </div>
                                 </div>
                                 <div class="col-xl-4">
@@ -108,13 +110,16 @@
                                         <div class="card-header">
                                             <h4 class="card-title">Versiones</h4>
                                         </div>
-                                        <div class="card-body">
-                                            <table class="table">
+                                        <div class="card-body" id="bodyVersions">
+                                            <div>
+                                                Haga click sobre un software para ver sus versiones
+                                            </div>
+                                            {{-- <table class="table">
                                                 <thead class="borderless">
                                                     <tr>
                                                         <th>#</th>
                                                         <th>Version</th>
-                                                        {{-- <th>Launch date</th> --}}
+                                                        <th>Launch date</th
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>
@@ -154,7 +159,7 @@
                                                     </tr>
 
                                                 </tbody>
-
+                                            </table> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -181,4 +186,5 @@
 @section('page-script')
   <!-- Page js files -->
   <script src="{{ asset(mix('js/scripts/forms/form-select2.js')) }}"></script>
+  <script src="{{ asset(mix('js/scripts/softwares/functions.js')) }}"></script>
 @endsection

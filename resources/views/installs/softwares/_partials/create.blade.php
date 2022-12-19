@@ -13,13 +13,14 @@
                     class="row gy-1 pt-75">
                     @csrf                   
                     <div class="col-12">
-                        <label class="form-label" for="modalEditUserFirstName">Nombre</label>
+                        <label class="form-label" for="name">Nombre</label>
                         <input type="text" class="form-control" name="soft_nombre" placeholder="Ingrese nombre del Software"
-                            value="" data-msg="Ingrese nombre del software" />
+                            value="" data-msg="Ingrese nombre del software" required/>
                     </div>
                     <div class="col-12">
                         <label class="form-label" for="soft_mars_id">Marca</label>
                         <select class="form-control form-select" id="soft_mars_id" name="soft_mars_id" required>
+                            <option value="">Seleccione una marca</option>
                             @foreach ($marcas_software as $marca)
                                 <option value="{{ $marca->mars_id }}">
                                     {{ $marca->mars_nombre }}
@@ -30,7 +31,7 @@
                     <div class="col-12">
                         <label class="form-label" for="soft_catSf_id">Categoría</label>
                         <select class="form-select form-control" name="soft_catSf_id" required>
-                            <option value="">Seleccione una</option>
+                            <option value="">Seleccione una categoría</option>
                             @foreach ($categorias_software as $categoria)
                                 <option value="{{ $categoria->catSf_id }}">
                                     {{ $categoria->catSf_nombre }}</option>

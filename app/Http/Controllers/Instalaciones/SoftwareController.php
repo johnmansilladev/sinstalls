@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Instalaciones\Software;
 use App\Models\Instalaciones\MarcaSoftware;
 use App\Models\Instalaciones\CategoriaSoftware;
-
+use Illuminate\Http\Response;
 
 class SoftwareController extends Controller
 {
@@ -102,5 +102,15 @@ class SoftwareController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    //Responses
+
+    public function  getVersionsByIdSoftware($id)
+    {
+        $software = Software::find($id);
+        $results = ["versions" =>$software->versionSoftwares];
+        return response()->json($results, Response::HTTP_OK);
     }
 }
