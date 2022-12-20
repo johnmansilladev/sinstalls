@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements('verSf_id');
             $table->unsignedBigInteger('verSf_soft_id');
             $table->string('verSf_nombre');
+            //$table->string('verSf_nombreComercial');
             $table->string('verSf_descripcion')->nullable();
             $table->string('verSf_soCompatibles')->nullable();
             $table->string('verSf_enlaces')->nullable();

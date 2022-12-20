@@ -6,7 +6,6 @@
   Author: Pixinvent
   Author URL: hhttp://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
-console.log('hola ctmre');
 import axios from 'axios';
 
 window._ = require('lodash');
@@ -20,6 +19,7 @@ if (token) {
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
+
 window.colors = {
   solid: {
     primary: '#7367F0',

@@ -1,8 +1,6 @@
 .dark-layout .form-control[type=file]::file-selector-button {
   background-color: #283046;
 }
-
-.selectedTr {
-  background-color: #1c1b1b;
-  color: #fff;
+.dark-layout .selectedTr {
+  background-color: #000;
 }

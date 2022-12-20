@@ -1,18 +1,21 @@
+$("#tableVersionSoftwares tbody tr").click(function () {
 
-$("#tableVersionSoftwares tbody tr").click(function(){
-    emptyTBody();
-    var idSoftware = $(this).find('td:first input#idSoftware').val();
+    $(this).addClass('selectedTr').siblings().removeClass('selectedTr');
+
+    var idSoftware = $(this).find("td:first input#idSoftware").val();
     
-    //console.log(idSoftware);
-    axios.get('/installs/response/getVersionsByIdSoftware/'+ idSoftware)   
-    .then(function(response){
-        console.log(response.data.versions);
-        let data = response.data.versions;
-        let tbody = '';
-        data.forEach(obj => {
-            tbody +=`<tr>
-                <td>${obj['verSf_nombre']}</td>                                                        
-                <td>${obj['verSf_size']}</td>
+    emptyTBody();
+    
+    axios
+        .get("/installs/response/getVersionsByIdSoftware/" + idSoftware)
+        .then(function (response) {
+            console.log(response.data.versions);
+            let data = response.data.versions;
+            let tbody = "";
+            data.forEach((obj) => {
+                tbody += `<tr>
+                <td>${obj["verSf_nombre"]}</td>                                                        
+                <td>${obj["verSf_size"]}</td>
                 <td>
                     <div class="dropdown">
                         <button type="button"
@@ -34,33 +37,40 @@ $("#tableVersionSoftwares tbody tr").click(function(){
                     </div>
                     </div>
                 </td>
-            </tr>`
-        });
+            </tr>`;
+            });
 
-        $('#bodyVersions').append(
-            `<table class="table">
+            $("#bodyVersions").append(
+                `<table class="table" id="versionesTable">
             <thead class="borderless">
                 <tr>
                     <th>Versión</th>
                     <th>Size</th>                    
-                    <th>Actions</th>
+                    <th></th>
                 </tr>
             </thead>
-            <tbody>`
-            +tbody+                      
-            `</tbody>
-        </table>`    
-        );
-
-    }).catch(function(error){
-        console.log(error);
-    });
-
-    
+            <tbody>` +
+                    tbody +
+                    `</tbody>
+        </table>`
+            );
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 });
 
-
-function emptyTBody(){
-    $('#bodyVersions table').remove();
-    $('#bodyVersions div').remove();
+function emptyTBody() {
+    $("#bodyVersions table").remove();
+    $("#bodyVersions div").remove();
 }
+
+
+
+
+//Versiones
+
+
+$("#versionesTable tbody tr").dblclick(function () {
+    console.log('double click in versions cards');
+});

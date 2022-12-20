@@ -19,7 +19,7 @@ class SoftwareSeeder extends Seeder
     {
         //Software::factory()->count(75)->create();
 
-        $softwares = 75;
+        $softwares = 1200;
 
         Software::factory()->count($softwares)
             ->has(VersionSoftware::factory()->count(3), 'versionSoftwares')
