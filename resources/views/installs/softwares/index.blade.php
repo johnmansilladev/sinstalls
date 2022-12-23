@@ -29,7 +29,7 @@
                                     <th>#</th>
                                     <th>Software</th>
                                     <th>Brand</th>
-                                    <th>Category</th>
+                                    <th>Categories</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -113,7 +113,7 @@
                 <!-- Version Card -->
                 <div class="card">
                     <div class="p-1">
-                        <h4 class="fw-bolder">Software</h4>
+                        <h4 class="fw-bolder" id="titleBodyVersions">Versiones</h4>
                     </div>
                     <div id="bodyVersions">
                         <div class="px-1 pb-1">
