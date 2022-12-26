@@ -111,6 +111,7 @@ class SoftwareController extends Controller
     {
         $software = Software::find($id);
         $results = ["versions" =>$software->versionSoftwares];
+        $results = ["software" =>$software];
         return response()->json($results, Response::HTTP_OK);
     }
 }

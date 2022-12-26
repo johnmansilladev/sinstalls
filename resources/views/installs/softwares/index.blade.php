@@ -17,7 +17,7 @@
 
                 <!-- Software table -->
                 <div class="card">
-                    <h4 class="card-header">Software's list</h4>
+                    <h4 class="card-header">Listado de softwares</h4>
                     {{--  <div class="card-header">
                         <h4 class="card-title">Softwares</h4>
                         <a class="btn  btn-primary" data-bs-toggle="modal" data-bs-target="#newSoftware">Registrar software</a>
@@ -112,12 +112,12 @@
             <div class="col-xl-3 col-lg-5 col-md-4 order-1 order-md-0">
                 <!-- Version Card -->
                 <div class="card">
-                    <div class="p-1">
-                        <h4 class="fw-bolder" id="titleBodyVersions">Versiones</h4>
+                    <div class="p-1" id="infoSoftware">
+                        <div><h4 class="fw-bolder">Versiones</h4></div>
                     </div>
                     <div id="bodyVersions">
                         <div class="px-1 pb-1">
-                            Haga click sobre un software para ver sus versiones
+                            Haga doble click sobre un software para ver sus versiones
                         </div>
                     </div>
                 </div>

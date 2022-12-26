@@ -54,9 +54,18 @@
           "name": "Empresas",
           "icon": "server",
           "slug": "config-operador"
-        }
-      
+        }      
     ,
+    {
+      "navheader": "Instalaciones",
+      "slug": ""
+    },    
+    {
+      "url": "installs/softwares",
+      "name": "Softwares",
+      "icon": "monitor",
+      "slug": "softwares.index"
+    },
     {
       "navheader": "Módulos",
       "slug": ""
