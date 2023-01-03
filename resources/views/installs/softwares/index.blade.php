@@ -8,20 +8,30 @@
 @section('content')
 
     <section class="app-user-view-account">
+        
         <div class="row">
 
 
             <!-- Softwares Content -->
             <div class="col-xl-9 col-lg-8 col-md-8">
 
-
                 <!-- Software table -->
                 <div class="card">
-                    <h4 class="card-header">Listado de softwares</h4>
-                    {{--  <div class="card-header">
-                        <h4 class="card-title">Softwares</h4>
-                        <a class="btn  btn-primary" data-bs-toggle="modal" data-bs-target="#newSoftware">Registrar software</a>
-                    </div> --}}
+                    <div class="row d-flex justify-content-between align-items-center m-1 ">
+                        <div class="col-lg-6 d-flex align-items-center">
+                            <h4 class="card-header">Listado de softwares</h4>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center justify-content-lg-end flex-lg-nowrap flex-wrap pe-lg-1 p-0">
+                            
+                            <button class="btn btn-primary btn-add-record ms-2" tabindex="0" type="button">
+                                <span>Registrar software</span></button>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-between align-items-center mb-1 mx-1">
+                        <div class="col-4">
+                            <input class="form-control input w-100" type="text" placeholder="Buscar software" tabindex="-1" data-search="">
+                        </div>
+                    </div>
                     <div class="table-responsive">
                         <table class="table datatable-project" id="tableVersionSoftwares">
                             <thead>
@@ -113,7 +123,9 @@
                 <!-- Version Card -->
                 <div class="card">
                     <div class="p-1" id="infoSoftware">
-                        <div><h4 class="fw-bolder">Versiones</h4></div>
+                        <div>
+                            <h4 class="fw-bolder">Versiones</h4>
+                        </div>
                     </div>
                     <div id="bodyVersions">
                         <div class="px-1 pb-1">

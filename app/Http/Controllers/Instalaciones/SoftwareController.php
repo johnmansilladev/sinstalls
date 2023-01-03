@@ -26,13 +26,13 @@ class SoftwareController extends Controller
 
         $pageConfigs = ['pageHeader' => false];
         //dd($softwares);
-        return view('installs.softwares.index',[
-            'pageConfigs' => $pageConfigs, 
+        return view('installs.softwares.index', [
+            'pageConfigs' => $pageConfigs,
             'softwares' => $softwares,
-            'marcas_software' => $marcas_software, 
+            'marcas_software' => $marcas_software,
             'categorias_software' => $categorias_software,
         ])
-        ->with('i', (request()->input('page', 1) - 1) * $elementsPerPage);
+            ->with('i', (request()->input('page', 1) - 1) * $elementsPerPage);
     }
 
     /**
@@ -76,7 +76,6 @@ class SoftwareController extends Controller
      */
     public function edit($id)
     {
-        
     }
 
     /**
@@ -101,7 +100,12 @@ class SoftwareController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $software =  Software::withCount('versionSoftwares')->findOrFail($id);
+        if ($software->version_softwares_count <= 0) {
+            
+        } else {
+            dd($software);
+        }
     }
 
 
@@ -110,8 +114,8 @@ class SoftwareController extends Controller
     public function  getVersionsByIdSoftware($id)
     {
         $software = Software::find($id);
-        $results = ["versions" =>$software->versionSoftwares];
-        $results = ["software" =>$software];
+        $results = ["versions" => $software->versionSoftwares];
+        $results = ["software" => $software];
         return response()->json($results, Response::HTTP_OK);
     }
 }
