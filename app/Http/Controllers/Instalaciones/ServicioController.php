@@ -77,7 +77,9 @@ class ServicioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $servicio = Servicio::findOrFail($id);
+        $servicio->fill($request->all())->save();
+        return redirect()->back();
     }
 
     /**
@@ -88,6 +90,13 @@ class ServicioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+
+        try {
+            $servicio = Servicio::findOrFail($id);
+        } catch (\Throwable $th) {
+            
+        }
+        
     }
 }
