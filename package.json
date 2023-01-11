@@ -10,12 +10,9 @@
         "production": "mix --production"
     },
     "dependencies": {
-        "bootstrap": "~5.1.0",
-        "vue": "^3.2.36",
-        "vue-loader": "^17.0.1"
+        "bootstrap": "~5.1.0"
     },
-    "devDependencies": {        
-        "axios": "^0.25.0",
+    "devDependencies": {
         "browser-sync": "^2.27.7",
         "browser-sync-webpack-plugin": "2.3.0",
         "laravel-mix": "^6.0.6",
@@ -26,7 +23,6 @@
         "resolve-url-loader": "5.0.0",
         "rtlcss": "^3.0",
         "sass": "1.30.0",
-        "sass-loader": "12.1.0",
-        "vite": "^4.0.4"
+        "sass-loader": "12.1.0"
     }
 }

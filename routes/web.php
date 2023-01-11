@@ -18,7 +18,9 @@ use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\Config\OperadorController;
 use App\Http\Controllers\Instalaciones\ServicioController;
 use App\Http\Controllers\Instalaciones\SoftwareController;
+use App\Http\Controllers\Instalaciones\MarcaSoftwareController;
 use App\Http\Controllers\Cuentas\CuentaPlataformaController;
+use App\Models\Instalaciones\MarcaSoftware;
 
 /*
 |--------------------------------------------------------------------------
@@ -255,6 +257,7 @@ Route::group(['prefix' => 'installs'], function (){
     Route::get('/servicios', [ServicioController::class, 'index'])->name('installs-servicios');
     //Route::get('/softwares', [SoftwareController::class, 'index'])->name('installs-softwares');
     Route::resource('/softwares', SoftwareController::class);
+    Route::resource('/marcas-softwares', MarcaSoftwareController::class);
     Route::get('/response/getVersionsByIdSoftware/{idSoftware}', [SoftwareController::class, 'getVersionsByIdSoftware'])->name('installs-response-json');    
 });
 

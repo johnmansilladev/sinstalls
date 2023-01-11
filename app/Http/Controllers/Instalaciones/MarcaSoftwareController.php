@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Instalaciones;
 
 use App\Http\Controllers\Controller;
+use App\Models\Instalaciones\MarcaSoftware;
 use Illuminate\Http\Request;
 
 class MarcaSoftwareController extends Controller
@@ -14,7 +15,20 @@ class MarcaSoftwareController extends Controller
      */
     public function index()
     {
-        //
+
+        /*$brands =  MarcaSoftware::all();        
+        return response()->json($brands);*/
+        $elementsPerPage = 10;
+
+       
+        $brands = MarcaSoftware::latest()->paginate($elementsPerPage);
+
+        $pageConfigs = ['pageHeader' => false];
+        //dd($softwares);
+        return view('installs.brands.index', [
+            'pageConfigs' => $pageConfigs,
+            'brands' => $brands,
+        ])->with('i', (request()->input('page', 1) - 1) * $elementsPerPage);
     }
 
     /**
@@ -35,7 +49,9 @@ class MarcaSoftwareController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
+        MarcaSoftware::create($request->all()); 
+        return redirect()->route('brands.index');
     }
 
     /**
@@ -46,7 +62,7 @@ class MarcaSoftwareController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -57,7 +73,8 @@ class MarcaSoftwareController extends Controller
      */
     public function edit($id)
     {
-        //
+        $brand = MarcaSoftware::find($id);
+        return response()->json($brand);
     }
 
     /**
@@ -69,7 +86,10 @@ class MarcaSoftwareController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $brand = MarcaSoftware::find($id);
+        $brand->update($request->all());
+ 
+        return response()->json('Marca de software actualizada con éxito');
     }
 
     /**
@@ -80,6 +100,8 @@ class MarcaSoftwareController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = MarcaSoftware::find($id);
+        $post->delete();
+        return response()->json('The post successfully deleted');
     }
 }
